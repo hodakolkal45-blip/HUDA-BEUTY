@@ -276,7 +276,15 @@ a { color: var(--accent); }
 
 .hero { overflow: hidden; }   /* the settling photo must not spill past the band */
 
-.hero-inner .kicker { color: var(--hero-ink); opacity: 0.75; }
+.hero-inner .kicker {
+  color: var(--hero-ink);            /* full ink: the 0.75 fade read 3.94:1 on --tan, below AA */
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;                         /* flex, so the rule moves to the reading edge in RTL */
+}
+.hero-inner .kicker::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+[dir="rtl"] .kicker { letter-spacing: 0; }   /* tracking breaks Arabic letter joins */
 .hero-inner h1 { margin-bottom: 8px; }
 .hero-tagline { font-size: 1.125rem; max-width: 26ch; margin-bottom: 32px; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
