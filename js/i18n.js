@@ -14,6 +14,7 @@ const i18n = {
     'nav.services': 'Hizmetler',
     'nav.bridal': 'Gelin',
     'nav.gallery': 'Galeri',
+    'nav.salon': 'Salon',
     'nav.booking': 'Randevu',
     'nav.contact': 'İletişim',
     'nav.call': 'Telefonla ara',
@@ -42,7 +43,9 @@ const i18n = {
       { name: 'Fön & Şekillendirme', desc: 'Hacimli, uzun süre kalıcı günlük fön ve şekil.', alt: 'Katlı kesim, hacimli fön' },
       { name: 'Topuz / Özel Gün Saçı', desc: 'Nişan, kına ve davetler için zarif topuz ve örgüler.', alt: 'Çiçekli tokalarla yapılmış topuz' },
       { name: 'Saç Bakımı / Maske', desc: 'Yıpranmış saça derinlemesine onarım ve nem.', alt: 'Saça bakım maskesi uygulanıyor' },
-      { name: 'Profesyonel Makyaj', desc: 'Gününüze ve ışığa göre hazırlanan, gün boyu kalıcı makyaj.', alt: 'Taçlı, porselen görünümlü pürüzsüz makyaj', items: ['Gelin Makyajı', 'Porselen Makyaj', 'Gece / Nişan Makyajı', 'Günlük / Soft Makyaj'] }
+      { name: 'Profesyonel Makyaj', desc: 'Gününüze ve ışığa göre hazırlanan, gün boyu kalıcı makyaj.', alt: 'Taçlı, porselen görünümlü pürüzsüz makyaj', items: ['Gelin Makyajı', 'Porselen Makyaj', 'Gece / Nişan Makyajı', 'Günlük / Soft Makyaj'] },
+      { name: 'Epilasyon', desc: 'Vücut tüylerinden pürüzsüz ve hijyenik kurtulma.', alt: 'Bacakta ağda ile tüy alma', photos: ['Bacakta ağda ile tüy alma', 'Bacakta cihazla epilasyon uygulaması'] },
+      { name: 'Profesyonel Cilt Bakımı', desc: 'Cildinizi derinlemesine temizleyen, yenileyen bakım.', alt: 'Hydrafacial cihazı ve LED maske ile cilt bakımı', photos: ['Hydrafacial cihazı ve LED maske ile cilt bakımı', 'Buharlı yüz temizliği'] }
     ],
 
     'bridal.kicker': 'Uzmanlık alanımız',
@@ -72,6 +75,25 @@ const i18n = {
       { cap: 'Porselen Makyaj', alt: 'Pürüzsüz, mat porselen ten görünümlü makyaj' },
       { cap: 'Gece / Nişan Makyajı', alt: 'Bronz gölgeli, belirgin gece makyajı' },
       { cap: 'Günlük / Soft Makyaj', alt: 'Doğal tonlarda hafif günlük makyaj' }
+    ],
+
+    'deck.prev': 'Önceki fotoğraf',
+    'deck.next': 'Sonraki fotoğraf',
+    'deck.hint': 'Fotoğrafları yana kaydırın.',
+
+    'salon.title': 'Salonumuz',
+    'salon.sub': 'Sizi bekleyen sıcak ve şık bir ortam.',
+    salon: [
+      { cap: 'Salon girişi', alt: 'Balon süslemeli, ışıklı Huda Görgel tabelalı salon girişi' },
+      { cap: 'Salon girişi', alt: 'Salon girişi, çelenkler ve altın siyah balonlarla süslenmiş' },
+      { cap: 'Huda Görgel tabelası', alt: 'Altın harfli, ışıklı Huda Görgel Bayan Kuaförü tabelası' },
+      { cap: 'Çalışma istasyonları', alt: 'Kemerli aynalı, altın şeritli iki çalışma istasyonu ve resepsiyon' },
+      { cap: 'Aynalı çalışma istasyonu', alt: 'Işıklı kemerli aynası ve altın detayları olan çalışma istasyonu' },
+      { cap: 'Çalışma istasyonu', alt: 'Altın çerçeveli sandalye ve kemerli aynalı çalışma istasyonu' },
+      { cap: 'Çalışma istasyonu ve resepsiyon', alt: 'Bej sandalye, kemerli ayna ve logolu resepsiyon bankosu' },
+      { cap: 'Salonumuzun logosu', alt: 'Duvarda altın detaylı Huda Görgel logo panosu' },
+      { cap: 'Bekleme alanı', alt: 'Kahverengi koltuklar ve altın sehpa ile bekleme alanı' },
+      { cap: 'Cilt bakımı odası', alt: 'Cilt bakımı cihazı ve LED maske' }
     ],
 
     'booking.title': 'Randevu Al',
@@ -121,6 +143,7 @@ const i18n = {
     'nav.services': 'الخدمات',
     'nav.bridal': 'العرائس',
     'nav.gallery': 'المعرض',
+    'nav.salon': 'الصالون',
     'nav.booking': 'الحجز',
     'nav.contact': 'تواصلي معنا',
     'nav.call': 'اتصلي بنا',
@@ -149,7 +172,9 @@ const i18n = {
       { name: 'تجفيف وتصفيف', desc: 'سشوار بكثافة وثبات يدوم طويلاً.', alt: 'قصّة مدرجة مع سشوار بكثافة' },
       { name: 'تسريحات المناسبات', desc: 'تسريحات وضفائر أنيقة للخطوبة والحنّة والحفلات.', alt: 'تسريحة مرفوعة بمشابك على شكل زهور' },
       { name: 'حمّامات كريم / ماسك', desc: 'ترطيب وإصلاح عميق للشعر المتضرر.', alt: 'وضع ماسك العناية على الشعر' },
-      { name: 'مكياج احترافي', desc: 'مكياج يُجهَّز على مناسبتك وإضاءتها، ويثبت طوال اليوم.', alt: 'مكياج ناعم بإطلالة بورسلان مع تاج', items: ['مكياج عرائس', 'مكياج بورسلان', 'مكياج سهرة وخطوبة', 'مكياج يومي ناعم'] }
+      { name: 'مكياج احترافي', desc: 'مكياج يُجهَّز على مناسبتك وإضاءتها، ويثبت طوال اليوم.', alt: 'مكياج ناعم بإطلالة بورسلان مع تاج', items: ['مكياج عرائس', 'مكياج بورسلان', 'مكياج سهرة وخطوبة', 'مكياج يومي ناعم'] },
+      { name: 'تنظيف الجسم من الشعر', desc: 'إزالة الشعر من الجسم بنعومة ونظافة تامة.', alt: 'إزالة الشعر بالشمع على الساق', photos: ['إزالة الشعر بالشمع على الساق', 'إزالة الشعر بالجهاز على الساق'] },
+      { name: 'تنظيف البشرة', desc: 'تنظيف عميق للبشرة يعيد لها النضارة.', alt: 'جلسة عناية بالبشرة بجهاز هيدرافيشل وقناع LED', photos: ['جلسة عناية بالبشرة بجهاز هيدرافيشل وقناع LED', 'تنظيف الوجه بالبخار'] }
     ],
 
     'bridal.kicker': 'اختصاصنا',
@@ -179,6 +204,25 @@ const i18n = {
       { cap: 'مكياج بورسلان', alt: 'بشرة ناعمة مصقولة بإطلالة بورسلان' },
       { cap: 'مكياج سهرة وخطوبة', alt: 'مكياج سهرة بظلال برونزية وعيون محدّدة' },
       { cap: 'مكياج يومي ناعم', alt: 'مكياج يومي خفيف بدرجات طبيعية' }
+    ],
+
+    'deck.prev': 'الصورة السابقة',
+    'deck.next': 'الصورة التالية',
+    'deck.hint': 'اسحبي الصور جانباً.',
+
+    'salon.title': 'صالوننا',
+    'salon.sub': 'مكان دافئ وأنيق بانتظاركم.',
+    salon: [
+      { cap: 'واجهة الصالون', alt: 'واجهة الصالون بلافتة مضيئة وزينة بالونات' },
+      { cap: 'واجهة الصالون', alt: 'مدخل الصالون مزيّن بأكاليل الورد وبالونات ذهبية وسوداء' },
+      { cap: 'لافتة الصالون', alt: 'لافتة هدى كولكل المضيئة بحروف ذهبية' },
+      { cap: 'محطات العمل', alt: 'محطتا عمل بمرايا مقوّسة وخطوط ذهبية مع الاستقبال' },
+      { cap: 'محطة عمل بمرآة', alt: 'محطة عمل بمرآة مقوّسة مضيئة وتفاصيل ذهبية' },
+      { cap: 'محطة عمل', alt: 'كرسي بإطار ذهبي أمام مرآة مقوّسة' },
+      { cap: 'محطة العمل والاستقبال', alt: 'كرسي بيج ومرآة مقوّسة وطاولة استقبال بشعار الصالون' },
+      { cap: 'شعار الصالون', alt: 'لوحة شعار هدى كولكل على الجدار بحافة ذهبية' },
+      { cap: 'ركن الانتظار', alt: 'ركن انتظار بكراسي بنية وطاولة ذهبية' },
+      { cap: 'غرفة العناية بالبشرة', alt: 'جهاز العناية بالبشرة وقناع LED' }
     ],
 
     'booking.title': 'احجزي موعدك',

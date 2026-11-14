@@ -443,27 +443,84 @@ summary.service-row::-webkit-details-marker { display: none; }
 .bridal-text p:not(.kicker) { color: var(--ink-soft); }
 .bridal-img { border-radius: var(--radius); width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
 
-/* Gallery ----------------------------------------------------------------- */
+/* Card deck (Gallery + Salon) ---------------------------------------------
+   Top card drags sideways (main.js sets its inline transform while dragging). */
 
-.gallery-grid {
-  list-style: none;
+.deck { --deck-ms: 280ms; max-width: 360px; margin-inline: auto; }
+@media (min-width: 900px) { .deck { max-width: 420px; } }
+
+.deck-stack {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  margin-bottom: 40px;                  /* room for the two cards peeking out below */
+  touch-action: pan-y;                  /* vertical swipes still scroll the page */
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  border-radius: var(--radius);
+}
+.deck-stack.is-dragging { cursor: grabbing; }
+
+.deck-card {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  transform-origin: 50% 100%;           /* pivots like a card held at the bottom */
+  transition: transform var(--deck-ms) var(--ease), opacity var(--deck-ms) var(--ease);
+  will-change: transform;
+}
+.deck-card[data-pos="1"] { transform: translateY(14px) scale(0.95); }
+.deck-card[data-pos="2"] { transform: translateY(28px) scale(0.9); }
+.deck-card[data-pos="3"] { transform: translateY(28px) scale(0.9); opacity: 0; pointer-events: none; }
+.deck-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.deck-bar { display: flex; align-items: center; gap: 16px; }
+.deck-info { flex: 1; text-align: center; }
+.deck-cap {
   margin: 0;
-  padding: 0;
+  min-height: 2.6em;                    /* two lines, so the buttons never jump between captions */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-weight: var(--head-weight);
+  font-size: 1.125rem;
+  line-height: 1.3;
+}
+.deck-count { margin: 4px 0 0; font-size: 0.875rem; color: var(--ink-soft); }
+.deck-hint { margin: 16px 0 0; text-align: center; font-size: 0.875rem; color: var(--ink-soft); }
+
+.deck-btn {
+  flex: none;
+  width: 48px;
+  height: 48px;
   display: grid;
-  gap: 24px;
-  grid-template-columns: 1fr;
+  place-items: center;
+  font: inherit;
+  font-size: 1.25rem;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 160ms ease-out, background-color 160ms ease;
 }
-@media (min-width: 640px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 900px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
-.gallery-grid figure { margin: 0; }
-.gallery-frame { overflow: hidden; border-radius: var(--radius); }
-.gallery-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; transition: transform 700ms var(--ease); }
-.gallery-grid figcaption { transition: color 200ms ease; }
-@media (hover: hover) {
-  .gallery-grid figure:hover img { transform: scale(1.04); }
-  .gallery-grid figure:hover figcaption { color: var(--ink); }
+.deck-btn:active { transform: scale(0.97); }
+.deck-btn span { display: inline-block; }
+[dir="rtl"] .deck-btn span { transform: scaleX(-1); }
+@media (hover: hover) and (pointer: fine) {
+  .deck-btn:hover { background: var(--surface); }
 }
-.gallery-grid figcaption { font-size: 0.875rem; color: var(--ink-soft); padding-top: 8px; text-align: start; }
 
 /* Booking ----------------------------------------------------------------- */
 
@@ -557,3 +614,8 @@ summary.service-row::-webkit-details-marker { display: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Everything below the hero is filled in by main.js. Until it has run, keep it invisible
+   (not collapsed) so the first paint doesn't show empty sections that then jump. */
+html:not(.ready) main > section:not(.hero),
+html:not(.ready) .site-footer { visibility: hidden; }

@@ -6,11 +6,12 @@
 <title data-i18n="meta.title"></title>
 <meta name="description" content="" data-i18n-attr="content:meta.description">
 
-<link rel="icon" href="assets/img/logo.jpg">
-<link rel="preload" as="image" href="assets/img/hero.jpg" fetchpriority="high">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preload" as="image" type="image/webp" href="assets/img/hero.webp" imagesrcset="assets/img/hero-640.webp 640w, assets/img/hero.webp 1199w" imagesizes="100vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600&family=Reem+Kufi:wght@400..700&family=Tajawal:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600&family=Reem+Kufi:wght@400..700&family=Tajawal:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600&family=Reem+Kufi:wght@400..700&family=Tajawal:wght@400;500;700&display=swap"></noscript>
 <link rel="stylesheet" href="css/style.css">
 
 <script>
@@ -45,6 +46,7 @@
       <a href="#services" data-i18n="nav.services"></a>
       <a href="#bridal" data-i18n="nav.bridal"></a>
       <a href="#gallery" data-i18n="nav.gallery"></a>
+      <a href="#salon" data-i18n="nav.salon"></a>
       <a href="#booking" data-i18n="nav.booking"></a>
       <a href="#contact" data-i18n="nav.contact"></a>
     </nav>
@@ -65,7 +67,7 @@
 <main id="main">
 
   <section class="hero" id="top">
-    <img class="hero-img" src="assets/img/hero.jpg" alt="" width="1199" height="714" fetchpriority="high" data-i18n-attr="alt:hero.alt">
+    <img class="hero-img" src="assets/img/hero.webp" srcset="assets/img/hero-640.webp 640w, assets/img/hero.webp 1199w" sizes="100vw" alt="" width="1199" height="714" fetchpriority="high" data-i18n-attr="alt:hero.alt">
     <div class="wrap hero-inner">
       <p class="kicker" data-i18n="hero.kicker"></p>
       <h1 data-i18n="hero.title"></h1>
@@ -93,7 +95,7 @@
         <p data-i18n="bridal.body"></p>
         <a class="btn btn-filled" href="#booking" data-i18n="bridal.cta"></a>
       </div>
-      <img class="bridal-img" src="assets/img/bridal-feature.jpg" alt="" width="820" height="1456" loading="lazy" data-i18n-attr="alt:bridal.alt">
+      <img class="bridal-img" src="assets/img/bridal-feature.webp" alt="" width="560" height="1000" loading="lazy" data-i18n-attr="alt:bridal.alt">
     </div>
   </section>
 
@@ -101,7 +103,15 @@
     <div class="wrap">
       <h2 class="section-title" data-i18n="gallery.title"></h2>
       <p class="section-sub" data-i18n="gallery.sub"></p>
-      <ul class="gallery-grid" id="gallery-grid"></ul>
+      <div class="deck reveal" id="gallery-deck"></div>
+    </div>
+  </section>
+
+  <section class="section" id="salon">
+    <div class="wrap">
+      <h2 class="section-title" data-i18n="salon.title"></h2>
+      <p class="section-sub" data-i18n="salon.sub"></p>
+      <div class="deck reveal" id="salon-deck"></div>
     </div>
   </section>
 
@@ -185,11 +195,12 @@
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <img class="footer-logo" src="assets/img/logo.jpg" alt="" width="1254" height="1254" loading="lazy" data-i18n-attr="alt:footer.logoAlt">
+    <img class="footer-logo" src="assets/img/logo.webp" alt="" width="400" height="400" loading="lazy" data-i18n-attr="alt:footer.logoAlt">
     <nav class="footer-nav" data-i18n-attr="aria-label:a11y.footerNav">
       <a href="#services" data-i18n="nav.services"></a>
       <a href="#bridal" data-i18n="nav.bridal"></a>
       <a href="#gallery" data-i18n="nav.gallery"></a>
+      <a href="#salon" data-i18n="nav.salon"></a>
       <a href="#booking" data-i18n="nav.booking"></a>
       <a href="#contact" data-i18n="nav.contact"></a>
     </nav>
